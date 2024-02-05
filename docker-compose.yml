@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - "./backend:/var/www/html/app"
+      - "./apache:/etc/apache2/sites-enabled"
+    ports:
+      - "80:80"
+    networks:
+      - pest-example
+networks:
+  pest-example:
+    driver: bridge
