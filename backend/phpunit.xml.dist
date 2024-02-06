@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
          backupGlobals="false"
          colors="true"
-         bootstrap="vendor/pestphp/pest/bin/pest.php"
+         bootstrap="vendor/pestphp/pest/bin/pest"
 >
     <testsuites>
         <testsuite name="Project Test Suite">
@@ -15,4 +16,8 @@
             <directory>src</directory>
         </whitelist>
     </filter>
+    <php>
+        <env name="KERNEL_CLASS" value="App\Kernel"/>
+        <env name="DATABASE_URL" value=""/>
+    </php>
 </phpunit>
